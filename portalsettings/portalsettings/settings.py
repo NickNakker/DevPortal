@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from django.conf import settings
 from django.conf.urls.static import static
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vcm*3jt+961&hxx@(q7l1qandr0ayf0u+4ic@o5^c=bczn*7%g'
+env = environ.Env(
+    Debug=(bool, False)
+)
+
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('Debug')
 
 ALLOWED_HOSTS = ['backend']
 
@@ -80,10 +85,10 @@ WSGI_APPLICATION = 'portalsettings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portal',
-        'USER': 'root',
-        'PASSWORD': 'kfsadtu9340',
-        'HOST': 'db',
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
         'PORT': 5432
     }
 }
@@ -113,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'RU'
 
-TIME_ZONE = 'Europe/Moscow'
+TIME_ZONE = env('TIMEZONE')
 
 USE_I18N = True
 
