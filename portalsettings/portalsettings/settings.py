@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vcm*3jt+961&hxx@(q7l1qandr0ayf0u+4ic@o5^c=bczn*7%g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['backend']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'portalsettings.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portal',
+        'USER': 'root',
+        'PASSWORD': 'kfsadtu9340',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
 
@@ -109,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
