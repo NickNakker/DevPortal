@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - "./nginx/conf.d:/etc/nginx/conf.d"
-      - "./portalsettings/portal/static:/data/static"
+      - "./portalsettings/static:/data/static"
     ports:
       - "80:80"
     depends_on:
