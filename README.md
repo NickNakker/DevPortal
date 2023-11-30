@@ -23,3 +23,12 @@ python manage.py collectstatic
 В репозиторий сохранять готовую статику в каталог *portalsettings/static/portal*
 Запрашивается статика с фронта по адресу */static/portal*
 
+# Обновление 01.12.2023
+Дефолт редирект при входе в уч. запись
+LOGIN_REDIRECT_URL = 'home'
+
+Настройки для дебага на локальном хосте
+CSRF_TRUSTED_ORIGINS = ['http://localhost','http://127.0.0.1']
+
+Дефолт редирект при выходе
+LOGIN_URL = 'user'

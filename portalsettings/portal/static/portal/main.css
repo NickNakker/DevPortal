@@ -5,3 +5,7 @@ body {
 .alert-light {
     border-color: #bfbfbf;
 }
+
+.errorlist * {
+    color: red;
+}

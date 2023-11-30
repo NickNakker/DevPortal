@@ -30,7 +30,7 @@ env = environ.Env(
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('Debug')
+DEBUG = True #env('Debug')
 
 ALLOWED_HOSTS = ['backend']
 
@@ -140,3 +140,9 @@ STATIC_ROOT = BASE_DIR / "static"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost','http://127.0.0.1']
+
+LOGIN_URL = 'user'
