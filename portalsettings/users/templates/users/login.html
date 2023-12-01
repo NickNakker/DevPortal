@@ -9,7 +9,7 @@
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <button class="btn btn-outline-warning" type="submit">Войти</button>
         <a href="{% url 'reg' %}"><p>Первый раз здесь?</p></a>
     </form>
