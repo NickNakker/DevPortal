@@ -29,6 +29,7 @@ class UserRegisterForm(UserCreationForm):
         label='Подтвердите пароль',
         widget= forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Проверка пароля'})
         )
+    
 
     class Meta:
         model = User
