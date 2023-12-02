@@ -1,0 +1,11 @@
+body {
+    background-color: #fafafa;
+}
+
+.alert-light {
+    border-color: #bfbfbf;
+}
+
+.errorlist * {
+    color: red;
+}
