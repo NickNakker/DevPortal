@@ -24,7 +24,6 @@ class NewsForm(ModelForm):
             }),
             "author": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите текст',
-                'disabled': 'disabled'
+                'placeholder': 'Введите текст'
             })
         }
