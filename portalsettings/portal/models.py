@@ -8,7 +8,7 @@ class News(models.Model):
     title = models.CharField('Название статьи', max_length=100, unique=False)
     text = models.TextField('Основной текст статьи')
     date = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, verbose_name='Автор', on_delete=models.CASCADE, blank=True)
+    author = models.TextField(blank=True)
 
     views = models.IntegerField('Просмотры', default=1)
 
